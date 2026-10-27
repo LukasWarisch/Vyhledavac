@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ukázka různých HTML formulářových prvků.">
+  <title>Findly – ukázkové formulářové prvky</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="sub-page">
+  <header class="site-header">
+    <a class="small-wordmark" href="index.html" aria-label="Findly – domů" style="font-family: Arial, Helvetica, sans-serif; font-size: 25px; font-weight: 700; letter-spacing: -1px; text-decoration: none;">
+      <span style="color: #2563eb;">F</span><span style="color: #202b45;">indly</span>
+    </a>
+    <nav class="top-nav" aria-label="Hlavní navigace">
+      <a href="index.html">Vyhledávání</a>
+      <a href="images.html">Obrázky</a>
+      <a href="advanced.html">Rozšířené vyhledávání</a>
+    </nav>
+  </header>
+
+  <main class="forms-main">
+    <h1 class="page-title">Ukázkové formulářové prvky</h1>
+    <p class="notice"><strong>Ukázka – formulář není funkční.</strong> Pole jsou pouze pro předvedení různých typů HTML formulářových prvků a neodesílají žádná data.</p>
+
+    <form class="demo-form">
+      <fieldset disabled>
+        <legend>Osobní a kontaktní údaje</legend>
+        <div class="form-grid">
+          <label for="full-name">Jméno a příjmení <input id="full-name" type="text" placeholder="Jan Novák"></label>
+          <label for="email">E-mail <input id="email" type="email" placeholder="jan@example.cz"></label>
+          <label for="phone">Telefon <input id="phone" type="tel" placeholder="+420 123 456 789"></label>
+          <label for="website">Webová stránka <input id="website" type="url" placeholder="https://example.cz"></label>
+          <label for="password">Heslo <input id="password" type="password" value="ukazkoveheslo"></label>
+          <label for="search-example">Hledat <input id="search-example" type="search" placeholder="Hledaný výraz"></label>
+        </div>
+      </fieldset>
+
+      <fieldset disabled>
+        <legend>Číselné a časové údaje</legend>
+        <div class="form-grid">
+          <label for="age">Věk <input id="age" type="number" min="0" max="120" value="18"></label>
+          <label for="rating">Hodnocení <input id="rating" type="range" min="0" max="10" value="6"></label>
+          <label for="birth-date">Datum <input id="birth-date" type="date"></label>
+          <label for="meeting-time">Čas <input id="meeting-time" type="time"></label>
+          <label for="appointment">Datum a čas <input id="appointment" type="datetime-local"></label>
+          <label for="month">Měsíc <input id="month" type="month"></label>
+          <label for="week">Týden <input id="week" type="week"></label>
+          <label for="favorite-color">Oblíbená barva <input id="favorite-color" type="color" value="#4285f4"></label>
+        </div>
+      </fieldset>
+
+      <fieldset disabled>
+        <legend>Výběr a předvolby</legend>
+        <p class="field-label">Preferovaný způsob kontaktu</p>
+        <div class="choice-list">
+          <label><input type="radio" name="contact" value="email" checked> E-mail</label>
+          <label><input type="radio" name="contact" value="phone"> Telefon</label>
+          <label><input type="radio" name="contact" value="post"> Pošta</label>
+        </div>
+        <p class="field-label">Zájmy</p>
+        <div class="choice-list">
+          <label><input type="checkbox" name="interest" value="web"> Tvorba webu</label>
+          <label><input type="checkbox" name="interest" value="design"> Grafický design</label>
+          <label><input type="checkbox" name="interest" value="other"> Jiné</label>
+        </div>
+        <div class="form-grid">
+          <label for="city">Město
+            <select id="city">
+              <option value="">Vyberte město</option>
+              <option>Praha</option>
+              <option>Brno</option>
+              <option>Ostrava</option>
+            </select>
+          </label>
+          <label for="browser">Prohlížeč
+            <input id="browser" list="browser-options" placeholder="Začněte psát">
+            <datalist id="browser-options">
+              <option value="Firefox">
+              <option value="Chrome">
+              <option value="Microsoft Edge">
+            </datalist>
+          </label>
+          <label for="attachment">Přiložit soubor <input id="attachment" type="file"></label>
+        </div>
+      </fieldset>
+
+      <fieldset disabled>
+        <legend>Zpráva a tlačítka</legend>
+        <label for="message">Text zprávy
+          <textarea id="message" rows="5" placeholder="Napište svou zprávu…"></textarea>
+        </label>
+        <div class="button-row demo-buttons">
+          <button type="button">Obyčejné tlačítko</button>
+          <button type="submit">Odeslat</button>
+          <button type="reset">Vymazat</button>
+          <input type="button" value="Tlačítko input">
+          <input type="submit" value="Odeslat input">
+          <input type="reset" value="Reset input">
+        </div>
+      </fieldset>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <p>Findly – školní projekt o formulářích a vyhledávání</p>
+    <nav class="footer-links" aria-label="Zdroje a validace">
+      <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Flukaswarisch.github.io%2Fgooglesearch%2Fforms.html">Validovat HTML</a>
+      <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Flukaswarisch.github.io%2Fgooglesearch%2Fstyle.css&amp;profile=css3svg&amp;usermedium=all&amp;warning=1&amp;vextwarning=&amp;lang=cs">Validovat CSS</a>
+      <a href="https://github.com/LukasWarisch/googlesearch/blob/main/citace.md">Citace a zdroje</a>
+    </nav>
+  </footer>
+</body>
+</html>

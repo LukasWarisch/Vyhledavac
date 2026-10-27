@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Findly – vyhledávání obrázků.">
+  <title>Findly – obrázky</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="sub-page">
+  <header class="site-header">
+    <a class="small-wordmark" href="index.html" aria-label="Findly – domů" style="font-family: Arial, Helvetica, sans-serif; font-size: 25px; font-weight: 700; letter-spacing: -1px; text-decoration: none;">
+      <span style="color: #2563eb;">F</span><span style="color: #202b45;">indly</span>
+    </a>
+    <nav class="top-nav" aria-label="Hlavní navigace">
+      <a href="index.html">Vyhledávání</a>
+      <a href="advanced.html">Rozšířené vyhledávání</a>
+      <a href="forms.html">Ukázkové formuláře</a>
+    </nav>
+  </header>
+
+  <main class="search-home">
+    <h1 class="page-title">Vyhledávání obrázků</h1>
+    <form class="search-form" action="https://www.google.com/search" method="get">
+      <label class="visually-hidden" for="image-search">Hledat obrázky na Findly</label>
+      <input id="image-search" class="search-input" type="search" name="q" autocomplete="off">
+      <input type="hidden" name="tbm" value="isch">
+      <button class="button" type="submit">Hledat obrázky</button>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <p>Findly – školní projekt o formulářích a vyhledávání</p>
+    <nav class="footer-links" aria-label="Zdroje a validace">
+      <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Flukaswarisch.github.io%2Fgooglesearch%2Fimages.html">Validovat HTML</a>
+      <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Flukaswarisch.github.io%2Fgooglesearch%2Fstyle.css&amp;profile=css3svg&amp;usermedium=all&amp;warning=1&amp;vextwarning=&amp;lang=cs">Validovat CSS</a>
+      <a href="https://github.com/LukasWarisch/googlesearch/blob/main/citace.md">Citace a zdroje</a>
+    </nav>
+  </footer>
+</body>
+</html>

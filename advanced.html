@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Findly – rozšířené vyhledávání podle přesných slov a výrazů.">
+  <title>Findly – rozšířené vyhledávání</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="sub-page">
+  <header class="site-header">
+    <a class="small-wordmark" href="index.html" aria-label="Findly – domů" style="font-family: Arial, Helvetica, sans-serif; font-size: 25px; font-weight: 700; letter-spacing: -1px; text-decoration: none;">
+      <span style="color: #2563eb;">F</span><span style="color: #202b45;">indly</span>
+    </a>
+    <nav class="top-nav" aria-label="Hlavní navigace">
+      <a href="index.html">Vyhledávání</a>
+      <a href="images.html">Obrázky</a>
+      <a href="forms.html">Ukázkové formuláře</a>
+    </nav>
+  </header>
+
+  <main class="advanced-main">
+    <h1 class="page-title">Rozšířené vyhledávání</h1>
+    <p class="intro">Upřesněte výsledky zadáním slov nebo frází.</p>
+    <form class="advanced-form" action="https://www.google.com/search" method="get">
+      <div class="advanced-row">
+        <label for="all-words">Najít stránky obsahující všechna tato slova:</label>
+        <input id="all-words" type="text" data-query="all">
+      </div>
+      <div class="advanced-row">
+        <label for="exact-phrase">Přesné slovo nebo fráze:</label>
+        <input id="exact-phrase" type="text" data-query="exact">
+      </div>
+      <div class="advanced-row">
+        <label for="any-words">Kterékoli z těchto slov:</label>
+        <input id="any-words" type="text" data-query="any">
+      </div>
+      <div class="advanced-row">
+        <label for="none-words">Žádné z těchto slov:</label>
+        <input id="none-words" type="text" data-query="none">
+      </div>
+      <div class="advanced-actions">
+        <button class="button primary-button" type="submit">Rozšířené vyhledávání</button>
+      </div>
+    </form>
+  </main>
+  <script>
+    document.querySelector(".advanced-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+      const value = (type) => this.querySelector(`[data-query="${type}"]`).value.trim();
+      const allWords = value("all").split(/\s+/).filter(Boolean);
+      const exactPhrase = value("exact");
+      const anyWords = value("any").split(/\s+/).filter(Boolean);
+      const excludedWords = value("none").split(/\s+/).filter(Boolean);
+      const queryParts = [
+        ...allWords,
+        exactPhrase && `"${exactPhrase}"`,
+        anyWords.length > 1 ? `(${anyWords.join(" OR ")})` : anyWords[0],
+        ...excludedWords.map((word) => `-${word}`)
+      ].filter(Boolean);
+      const query = new URLSearchParams({ q: queryParts.join(" ") });
+      window.location.href = `${this.action}?${query.toString()}`;
+    });
+  </script>
+
+  <footer class="site-footer">
+    <p>Findly – školní projekt o formulářích a vyhledávání</p>
+    <nav class="footer-links" aria-label="Zdroje a validace">
+      <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Flukaswarisch.github.io%2Fgooglesearch%2Fadvanced.html">Validovat HTML</a>
+      <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Flukaswarisch.github.io%2Fgooglesearch%2Fstyle.css&amp;profile=css3svg&amp;usermedium=all&amp;warning=1&amp;vextwarning=&amp;lang=cs">Validovat CSS</a>
+      <a href="https://github.com/LukasWarisch/googlesearch/blob/main/citace.md">Citace a zdroje</a>
+    </nav>
+  </footer>
+</body>
+</html>
